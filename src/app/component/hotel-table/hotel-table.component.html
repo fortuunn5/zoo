@@ -1,0 +1,85 @@
+<body class="hm-gradient">
+
+    <main>
+
+        <!--MDB Tables-->
+        <div class="container mt-4">
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Отели</h2>
+                            <button style="border-radius: 50%;" (click)="onAdd()"
+                            class="btn btn-primary btn-circle btn-circle-sm m-4"><i
+                                class="fa fa-plus"></i></button>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                    <!--Table-->
+                    <table class="table table-striped">
+                        <!--Table head-->
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Адрес</th>
+                                <th>Номер телефона</th>
+                                <th>Услуги</th>
+                                <!-- <th>Услуги???</th> -->
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+                        <!--Table body-->
+                        <tbody>
+                            <tr *ngFor="let hotel of hotels">
+                                <th scope="row">{{hotel.id}}</th>
+                                <td><input id="form_address-{{hotel.id}}" type="text" name="address" class="form-control"
+                                    placeholder="Please enter address *" required [(ngModel)] = "hotel.address"
+                                    data-error="Address is required."></td>
+                                <td><input id="form_phone-{{hotel.id}}" type="text" name="phone" class="form-control"
+                                    placeholder="Please enter phone *" required [(ngModel)] = "hotel.phone"
+                                    data-error="Phone is required."></td>
+                                <td>
+                                    <!-- <p *ngFor="let service of hotel.services">{{service.name}}</p> -->
+                                    <ng-select 
+                                            name="f" 
+                                            [items]="services" 
+                                            bindLabel="name"
+                                            placeholder="Select Category" appendTo="body" 
+                                            [multiple]="true"
+                                            [(ngModel)]="hotel.services" name="ff" 
+                                            [hideSelected]="true"
+                                            [closeOnSelect]="false"
+                                            >
+                                            </ng-select>
+                                </td>
+                                <td>
+                                    <!-- <button class="fa fa-pencil-square-o" style='margin: 10px; border: 0; border-radius: 50%; background-color: green; font-size:25px;color:white'></button> -->
+                                    <!-- <button class="fa fa-trash " style='border: 0; border-radius: 50%; background-color: red; font-size:25px;color:white'></button> -->
+                                    <button type="submit" style="border-radius: 50%;"
+                                        class="btn btn-warning  btn-circle btn-circle-sm m-1" (click)="onUpdate(hotel)"><i
+                                            class="fa fa-pencil"></i></button>
+                                    <button style="border-radius: 50%;"
+                                        class="btn btn-danger btn-circle btn-circle-sm m-1" (click)="onDelete(hotel)"><i
+                                            class="fa fa-trash"></i></button>
+
+
+                                </td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+            </div>
+
+
+        </div>
+        <!--MDB Tables-->
+
+    </main>
+
+</body>

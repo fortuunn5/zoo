@@ -1,0 +1,18 @@
+#header {
+    background: url(https://sun9-57.userapi.com/impf/c857420/v857420773/229633/cXppj2YXU3k.jpg?size=1590x400&quality=95&crop=0,176,2000,503&sign=1fe455fc94d0ee100fb14fdaf5cfe7bb&type=cover_group) center center / cover no-repeat ;
+  }
+
+
+  .transparent {
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 58px;
+    /* line-height: 50px; */
+    text-transform: uppercase;
+    background: #FFF;
+    color: #FFF;
+    mix-blend-mode: multiply;
+    padding: 10px 20px;
+    display: inline-block;
+    /* text-shadow: 0 0 8px rgba(0,0,0,5), 0 2px 4px rgba(0,0,0,0.7); */
+}

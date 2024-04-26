@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" />
+<!-- <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script> -->
+<!-- <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/js/bootstrap.bundle.min.js'></script> -->
+<div style="width: 1300px; padding: 10px; margin: 10px">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="hotels-tab" data-bs-toggle="tab" data-bs-target="#hotels"
+                type="button" role="tab" aria-controls="hotels" aria-selected="true">
+                Отели</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="services-tab" data-bs-toggle="tab" data-bs-target="#services"
+                type="button" role="tab" aria-controls="services" aria-selected="false">
+                Услуги</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="visits-tab" data-bs-toggle="tab" data-bs-target="#visits"
+                type="button" role="tab" aria-controls="visits" aria-selected="false">
+                Посещения</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users"
+                type="button" role="tab" aria-controls="users" aria-selected="false">
+                Пользователи</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pets-tab" data-bs-toggle="tab" data-bs-target="#pets"
+                type="button" role="tab" aria-controls="pets" aria-selected="false">
+                Питомцы</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="hotels" role="tabpanel" aria-labelledby="hotels-tab">
+            <app-hotel-table></app-hotel-table>
+        </div>
+        <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+            <app-service-table></app-service-table>
+        </div>
+        <div class="tab-pane fade" id="visits" role="tabpanel" aria-labelledby="visits-tab">
+            <app-visit-table></app-visit-table>
+        </div>
+        <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
+            <app-user-table></app-user-table>
+        </div>
+        <div class="tab-pane fade" id="pets" role="tabpanel" aria-labelledby="pets-tab">
+            <app-pet-table></app-pet-table>
+        </div>
+    </div>
+</div>
+<!-- <button type="button" class="btn btn-labeled btn-success"><span class="btn-label"><i class="fa fa-check"></i></span>Подтвердить</button>
+<button type="button" class="btn btn-labeled btn-danger"><span class="btn-label"><i class="fa fa-remove"></i></span>Отмена</button>
+<button type="button" class="btn btn-labeled btn-warning"><span class="btn-label"><i class="fa fa-bookmark"></i></span>Закладки</button>
+<button type="button" class="btn btn-labeled btn-primary"><span class="btn-label"><i class="fa fa-camera"></i></span>Фото</button>
+<button type="button" class="btn btn-labeled btn-default"><span class="btn-label"><i class="fa fa-chevron-left"></i></span>Пред</button>
+<button type="button" class="btn btn-labeled btn-default"><span class="btn-label"><i class="fa fa-chevron-right"></i></span>След</button>
+<button type="button" class="btn btn-labeled btn-success"><span class="btn-label"><i class="fa fa-thumbs-up"></i></span>Нравится</button>
+<button type="button" class="btn btn-labeled btn-danger"><span class="btn-label"><i class="fa fa-thumbs-down"></i></span>Не нравится</button>
+<button type="button" class="btn btn-labeled btn-info"><span class="btn-label"><i class="fa fa-refresh"></i></span>Обновить</button>
+<button type="button" class="btn btn-labeled btn-danger"><span class="btn-label" ><i class="fa fa-trash" style="border-radius: 50%;"></i></span></button> -->
+
+
+

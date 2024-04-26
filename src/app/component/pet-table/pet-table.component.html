@@ -1,0 +1,127 @@
+<body class="hm-gradient">
+
+    <main>
+
+        <!--MDB Tables-->
+        <div class="container mt-4">
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Питомцы</h2>
+                            <button style="border-radius: 50%;" (click)="onAdd()"
+                            class="btn btn-primary btn-circle btn-circle-sm m-4"><i
+                                class="fa fa-plus"></i></button>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                    <!--Table-->
+                    <table class="table table-striped">
+                        <!--Table head-->
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>ФИО владельца</th>
+                                <th>Номер телефона владельца</th>
+                                <th>Кличка питомца</th>
+                                <th>Возраст</th>
+                                <th>Вид</th>
+                                <th>Пол</th>
+                                <!-- <th>Услуги???</th> -->
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+                        <!--Table body-->
+                        <tbody>
+                            <tr *ngFor="let pet of pets">
+                                <th scope="row">{{pet.id}}</th>
+                                <td>
+                                    <!-- <input id="form_address-{{pet.id}}" type="text" name="address" class="form-control"
+                                    placeholder="Please enter address *" required [(ngModel)] = "hotel.address"
+                                    data-error="Address is required."> -->
+
+                                    {{pet.user.lastname}} {{pet.user.firstname}} {{pet.user.middlename}}
+
+                                </td>
+                                <td>
+                                    <ng-select 
+                                            name="f" 
+                                            [items]="users" 
+                                            bindLabel="phone"
+                                            placeholder="Select phone" appendTo="body" 
+                                            [multiple]="false"
+                                            [(ngModel)]="pet.user" name="users" 
+                                            [hideSelected]="true"
+                                            [closeOnSelect]="false"
+                                            >
+                                            </ng-select>
+                                </td>
+                                <td>
+                                    <input id="form_phone-{{pet.id}}" type="text" name="name" class="form-control"
+                                    placeholder="Please enter name *" required [(ngModel)] = "pet.name"
+                                    data-error="Name is required.">
+                                </td>
+                                <td>
+                                    <input id="form_phone-{{pet.id}}" type="number" name="age" class="form-control"
+                                    placeholder="Please enter age *" required [(ngModel)] = "pet.age"
+                                    data-error="Age is required.">
+                                </td>
+                                <td>
+                                    <!-- <p *ngFor="let service of hotel.services">{{service.name}}</p> -->
+                                    <ng-select 
+                                            name="f" 
+                                            [items]="types" 
+                                            bindLabel="type"
+                                            placeholder="Select Category" appendTo="body" 
+                                            [multiple]="false"
+                                            [(ngModel)]="pet.type" name="ff" 
+                                            [hideSelected]="true"
+                                            [closeOnSelect]="false"
+                                            >
+                                            </ng-select>
+                                </td>
+                                <td>
+                                    <!-- <p *ngFor="let service of hotel.services">{{service.name}}</p> -->
+                                    <ng-select 
+                                            name="f" 
+                                            [items]="genders" 
+                                            bindLabel="gender"
+                                            placeholder="Select Category" appendTo="body" 
+                                            [multiple]="false"
+                                            [(ngModel)]="pet.gender" name="ff" 
+                                            [hideSelected]="true"
+                                            [closeOnSelect]="false"
+                                            >
+                                            </ng-select>
+                                </td>
+                                <td>
+                                    <!-- <button class="fa fa-pencil-square-o" style='margin: 10px; border: 0; border-radius: 50%; background-color: green; font-size:25px;color:white'></button> -->
+                                    <!-- <button class="fa fa-trash " style='border: 0; border-radius: 50%; background-color: red; font-size:25px;color:white'></button> -->
+                                    <button type="submit" style="border-radius: 50%;"
+                                        class="btn btn-warning  btn-circle btn-circle-sm m-1" (click)="onUpdate(pet)"><i
+                                            class="fa fa-pencil"></i></button>
+                                    <button style="border-radius: 50%;"
+                                        class="btn btn-danger btn-circle btn-circle-sm m-1" (click)="onDelete(pet)"><i
+                                            class="fa fa-trash"></i></button>
+
+
+                                </td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+            </div>
+
+
+        </div>
+        <!--MDB Tables-->
+
+    </main>
+
+</body>

@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-lg-7 mx-auto">
+
+            <div class=" text-center">
+                <h1>Записать питомца</h1>
+            </div>
+            <div class="card mt-2 mx-auto p-4 bg-light">
+
+                <div class="card-body bg-light">
+
+                    <div class="container">
+                        <form id="contact-form" role="form">
+
+                            <div class="controls">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_need">Введите название услуги *</label>
+                                            <input id="form_name" type="text" name="name" class="form-control"
+                                                placeholder="Please enter service name *" required [(ngModel)]="service.name"
+                                                data-error="Name is required.">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label for="form_need">Введите цену услуги</label>
+                                                <input id="form_price" type="text" name="price" class="form-control"
+                                                    placeholder="Please enter service price *" required [(ngModel)]="service.price"
+                                                    data-error="Price is required.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="form-group">
+                                            <label for="selectedCat">Введите описание услуги</label>
+                                            <textarea id="form_description" name="description" class="form-control"
+                                            placeholder="Write service description here." rows="4" required [(ngModel)]="service.description"
+                                            data-error="Please, write service description."></textarea>
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <br>
+                                        <button (click)="onSubmit()" type="submit" class="btn btn-success btn-send  pt-2 btn-block"
+                                            value="Записать">Записать</button>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <a href="/services">
+                                            <button type="button" class="btn btn-success btn-send  pt-2 btn-block"
+                                            value="Записать">Назад</button>  
+                                        </a>
+                                    </div>
+                                </div>   
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.8 -->
+
+        </div>
+        <!-- /.row-->
+
+    </div>
+</div>

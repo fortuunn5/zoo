@@ -1,0 +1,84 @@
+<body class="hm-gradient">
+
+    <main>
+
+        <!--MDB Tables-->
+        <div class="container mt-4">
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Услуги</h2>
+                            <button style="border-radius: 50%;" (click)="onAdd()"
+                            class="btn btn-primary btn-circle btn-circle-sm m-4"><i
+                                class="fa fa-plus"></i></button>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                    <!--Table-->
+                    <table class="table table-striped">
+                        <!--Table head-->
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Название услуги</th>
+                                <th>Описание услуги</th>
+                                <th>Цена</th>
+                                <!-- <th>Услуги???</th> -->
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+                        <!--Table body-->
+                        <tbody>
+                            <tr *ngFor="let service of services">
+                                <th scope="row">{{service.id}}</th>
+                                <td>
+                                    <p *ngIf="isAF(service); else el">{{service.name}}</p>
+                                    <ng-template #el><input id="form_name-{{service.id}}" type="text" name="name" class="form-control"
+                                        placeholder="Please enter name *" required [(ngModel)] = "service.name"
+                                        data-error="Name is required."></ng-template>
+                                    
+                                </td>
+                                
+                                <td>
+                                    <p *ngIf="isAF(service); else els">{{service.description}}</p>
+                                    <ng-template #els><input id="form_description-{{service.id}}" type="text" name="description" class="form-control"
+                                        placeholder="Please enter description *" required [(ngModel)] = "service.description"
+                                        data-error="description is required."></ng-template>
+                                    
+                                    
+                                </td>
+                                <td>
+                                    <input id="form_price-{{service.id}}" type="number" name="price" class="form-control"
+                                    placeholder="Please enter price *" required [(ngModel)] = "service.price"
+                                    data-error="Price is required.">р</td>
+                                <td>
+                                    <!-- <button class="fa fa-pencil-square-o" style='margin: 10px; border: 0; border-radius: 50%; background-color: green; font-size:25px;color:white'></button> -->
+                                    <!-- <button class="fa fa-trash " style='border: 0; border-radius: 50%; background-color: red; font-size:25px;color:white'></button> -->
+                                    <button type="submit" style="border-radius: 50%;"
+                                        class="btn btn-warning  btn-circle btn-circle-sm m-1"><i
+                                            class="fa fa-pencil" (click)="onUpdate(service)"></i></button>
+                                    <button style="border-radius: 50%;"
+                                        class="btn btn-danger btn-circle btn-circle-sm m-1" (click)="onDelete(service)"><i
+                                            class="fa fa-trash"></i></button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+            </div>
+
+
+        </div>
+        <!--MDB Tables-->
+
+    </main>
+
+</body>

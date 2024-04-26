@@ -1,0 +1,30 @@
+<section class="mt-4" id="gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4"  *ngFor="let visit of visits">
+                <div class="card" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{visit.petDto.user.lastname}}  {{visit.petDto.user.firstname}}  {{visit.petDto.user.middlename}}</h5>
+                        <p class="card-text">{{visit.petDto.user.phone}}</p>
+                        <p class="card-text">Питомец: {{visit.petDto.name}}</p>
+                        <p class="card-text">Услуги:</p>
+                        <div *ngFor="let service of visit.services">
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                {{service.name}}</p>
+                        </div>
+                        <p class="card-text">Дата заселения: {{ visit.arrivalDate| date : 'dd-MM-yyyy' }}</p>
+                        <p class="card-text">Дата выселения: {{ visit.departureDate| date : 'dd-MM-yyyy' }}</p>
+                        <p class="card-text">Итоговая цена: {{visit.totalPrice}} руб</p>
+                        <a href="/visits/{{visit.id}}/edit">
+                            <button class="btn btn-outline-success btn-sm" type="submit">Изменить</button>
+                          </a>
+                          &nbsp;
+                          <button (click)="deleteVisit(visit)" class="btn btn-outline-success btn-sm" type="submit">Удалить</button>
+                          &nbsp;
+                          <button *ngIf="!visit.departureDate" (click)="archiveVisit(visit)" class="btn btn-outline-success btn-sm" type="submit">Выселить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,55 @@
+<section class="mt-4" id="gallery">
+  <div class="container">
+      <div class="row">
+<div class="card mb-3 mt-3 m-5" style="max-width: 540px;"  *ngFor="let pet of pets">
+    <div class="row g-0" >
+      <div class="col-md-4" >
+        <!-- <img *ngIf="isCat(pet); else dog" src="https://a.allegroimg.com/s400/11bb39/abc0d33b45f8aec634f9a7f97ef0/NAKLEJKA-NA-SAMOCHOD-KOT" class="img-fluid rounded-start" alt="...">
+        <ng-template #dog > <img *ngIf="isDog(pet); else rac" src="https://w7.pngwing.com/pngs/568/781/png-transparent-dog-silhouette-sticker-animal-silhouettes-mammal-animals-carnivoran-thumbnail.png" class="img-fluid rounded-start" alt="..."></ng-template>
+        <ng-template #rac > <img *ngIf="isRaccoon(pet); else chi" src="https://icon-library.com/images/27485-200_104880.png" class="img-fluid rounded-start" alt="..."></ng-template>
+        <ng-template #chi > <img *ngIf="isChinchilla(pet); else gui" src="https://w7.pngwing.com/pngs/303/176/png-transparent-whiskers-silhouette-chinchilla-black-and-white-silhouette-mammal-animals-cat-like-mammal-thumbnail.png" class="img-fluid rounded-start" alt="..."></ng-template>
+        <ng-template #gui > <img *ngIf="isGuineaPig(pet); else rab" src="https://lifescienceproduction.co.uk/wp-content/uploads/2018/05/Animal-vector-guinea-pig-300x300.jpg" class="img-fluid rounded-start" alt="..."></ng-template>
+        <ng-template #rab > <img *ngIf="isRabbit(pet); else ham" src="https://kulebiaka.ru/wp-content/uploads/2022/10/krolik_1_1.jpg" class="img-fluid rounded-start" alt="..."></ng-template>
+        <ng-template #ham > <img *ngIf="isHamster(pet); else mo" src="https://img1.freepng.ru/20180629/qfe/kisspng-prairie-dog-seashell-computer-icons-clip-art-prairie-dog-5b35d75e551f50.7223213515302551983487.jpg" class="img-fluid rounded-start" alt="..."></ng-template>
+        <ng-template #mo > <img *ngIf="isMouse(pet); else rat" src="https://w7.pngwing.com/pngs/752/229/png-transparent-mickey-mouse-minnie-mouse-computer-mouse-mouse-trap-mammal-heroes-fauna-thumbnail.png" class="img-fluid rounded-start" alt="..."></ng-template>
+        <ng-template #rat > <img *ngIf="isRat(pet); else hzz" src="https://sun9-44.userapi.com/impf/c847221/v847221002/1204a4/W-JpphmmKU4.jpg?size=480x420&quality=96&sign=6db29c4fba24bace697247bdd86d316a&type=album" class="img-fluid rounded-start" alt="..."></ng-template>
+        <ng-template #hzz > <img  src="https://a.allegroimg.com/s400/11bb39/abc0d33b45f8aec634f9a7f97ef0/NAKLEJKA-NA-SAMOCHOD-KOT" class="img-fluid rounded-start" alt="..."></ng-template> -->
+
+
+
+        <img *ngIf="pet.type.type === 'Кошка'" src="https://a.allegroimg.com/s400/11bb39/abc0d33b45f8aec634f9a7f97ef0/NAKLEJKA-NA-SAMOCHOD-KOT" class="img-fluid rounded-start" alt="..." >
+        <img *ngIf="pet.type.type === 'Собака'" src="https://w7.pngwing.com/pngs/568/781/png-transparent-dog-silhouette-sticker-animal-silhouettes-mammal-animals-carnivoran-thumbnail.png" class="img-fluid rounded-start" alt="...">
+        <img *ngIf="pet.type.type === 'Енот'" src="https://icon-library.com/images/27485-200_104880.png" class="img-fluid rounded-start" alt="...">
+        <img *ngIf="pet.type.type === 'Шиншилла'" src="https://w7.pngwing.com/pngs/303/176/png-transparent-whiskers-silhouette-chinchilla-black-and-white-silhouette-mammal-animals-cat-like-mammal-thumbnail.png" class="img-fluid rounded-start" alt="...">
+        <img *ngIf="pet.type.type === 'Морская свинка'" src="https://lifescienceproduction.co.uk/wp-content/uploads/2018/05/Animal-vector-guinea-pig-300x300.jpg" class="img-fluid rounded-start" alt="...">
+        <img *ngIf="pet.type.type === 'Кролик'" src="https://kulebiaka.ru/wp-content/uploads/2022/10/krolik_1_1.jpg" class="img-fluid rounded-start" alt="...">
+        <img *ngIf="pet.type.type === 'Хомяк'" src="https://img1.freepng.ru/20180629/qfe/kisspng-prairie-dog-seashell-computer-icons-clip-art-prairie-dog-5b35d75e551f50.7223213515302551983487.jpg" class="img-fluid rounded-start" alt="...">
+        <img *ngIf="pet.type.type === 'Мышь'" src="https://w7.pngwing.com/pngs/752/229/png-transparent-mickey-mouse-minnie-mouse-computer-mouse-mouse-trap-mammal-heroes-fauna-thumbnail.png" class="img-fluid rounded-start" alt="...">
+        <img *ngIf="pet.type.type === 'Крыса'" src="https://sun9-44.userapi.com/impf/c847221/v847221002/1204a4/W-JpphmmKU4.jpg?size=480x420&quality=96&sign=6db29c4fba24bace697247bdd86d316a&type=album" class="img-fluid rounded-start" alt="...">
+        <!-- <img  src="https://a.allegroimg.com/s400/11bb39/abc0d33b45f8aec634f9a7f97ef0/NAKLEJKA-NA-SAMOCHOD-KOT" class="img-fluid rounded-start" alt="..."> -->
+
+
+
+      </div>
+
+      
+      
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{pet.name}}</h5>
+          <p class="card-text">Вид: {{pet.type.type}}</p>
+          <p class="card-text">Пол: {{pet.gender.gender}}</p>
+          <p class="card-text" *ngIf="years(pet); else n">Возраст: {{pet.age}} г</p>
+          <ng-template #n> <p class="card-text">Возраст: {{pet.age}} л</p></ng-template>
+          <a href="/pets/{{pet.id}}/edit">
+            <button class="btn btn-outline-success btn-sm" type="submit">Изменить</button>
+          </a>
+          &nbsp;
+          <button (click)="deletePet(pet)" class="btn btn-outline-success btn-sm" type="submit">Удалить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
